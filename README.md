@@ -1,2 +1,1 @@
-pong-pyglet
-===========
+# Pong (Pyglet)
