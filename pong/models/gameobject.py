@@ -35,3 +35,11 @@ class GameObject(object):
 
         if self.position.y <= (self.image.height / 2):
             self.position.y = self.image.height / 2
+
+    def __str__(self):
+        return "%s: (Position: %s, Veclocity: %s)" % (self.name, self.position, self.velocity)
+
+
+class AiGameObject(GameObject):
+    def think(self, game_objects):
+        pass

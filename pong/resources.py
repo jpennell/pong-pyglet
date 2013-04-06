@@ -9,6 +9,7 @@ window = pyglet.window.Window(800, 600)
 #Images
 ball_image = pyglet.resource.image("ball.png")
 paddle_image = pyglet.resource.image("paddle.png")
+computer_paddle_image = pyglet.resource.image("paddle.png")
 
 #Batch
 default_batch = pyglet.graphics.Batch()

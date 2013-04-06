@@ -6,7 +6,7 @@ from vector import Vector2d
 class Ball(GameObject):
     def __init__(self, image=resources.ball_image,
                  position=Vector2d(400, 300),
-                 velocity=Vector2d(10, 150)):
+                 velocity=Vector2d(-100, -150)):
         super(Ball, self).__init__(name="ball", image=image, position=position, velocity=velocity)
 
     def update(self, delta):
@@ -26,7 +26,19 @@ class Ball(GameObject):
                 self.handle_computer_paddle_collision(game_object)
 
     def handle_paddle_collision(self, paddle):
-        pass
+        x = paddle.position.x + (paddle.image.width / 2)
+        y_top = paddle.position.y + (paddle.image.height / 2)
+        y_bottom = paddle.position.y - (paddle.image.height / 2)
+
+        if self.position.x <= x and y_bottom <= self.position.y <= y_top:
+            self.velocity.x = -self.velocity.x
+            self.position.x = paddle.position.x + (paddle.image.width / 2) + (self.image.width / 2) + 1
 
     def handle_computer_paddle_collision(self, paddle):
-        pass
+        x = paddle.position.x - (paddle.image.width / 2)
+        y_top = paddle.position.y + (paddle.image.height / 2)
+        y_bottom = paddle.position.y - (paddle.image.height / 2)
+
+        if self.position.x >= x and y_bottom <= self.position.y <= y_top:
+            self.velocity.x = -self.velocity.x
+            self.position.x = paddle.position.x - (paddle.image.width / 2) - (self.image.width / 2) - 1
