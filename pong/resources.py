@@ -3,9 +3,12 @@ import pyglet
 pyglet.resource.path = ['images']
 pyglet.resource.reindex()
 
-#Ball
-ball_image = pyglet.resource.image("ball.png")
-ball = pyglet.sprite.Sprite(img=ball_image, x=400, y=300)
+#Window
+window = pyglet.window.Window(800, 600)
 
-#Label
-label = pyglet.text.Label(text="Pong, Pong, Pong", x=400, y=575, anchor_x='center')
+#Images
+ball_image = pyglet.resource.image("ball.png")
+paddle_image = pyglet.resource.image("paddle.png")
+
+#Batch
+default_batch = pyglet.graphics.Batch()
