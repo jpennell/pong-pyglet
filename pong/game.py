@@ -1,11 +1,12 @@
 import pyglet
-import models
 import resources
+from models.ball import Ball
+from models.paddle import PlayerPaddle, ComputerPaddle
 
 game_objects = [
-    models.Ball(),
-    models.PlayerPaddle(),
-    models.ComputerPaddle()
+    Ball(),
+    PlayerPaddle(),
+    ComputerPaddle()
 ]
 
 
